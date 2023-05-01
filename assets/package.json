@@ -39,6 +39,7 @@
     "sass-mq": "^6.0.0",
     "style-loader": "^3.3.2",
     "terser-webpack-plugin": "^5.3.7",
+    "url-loader": "^4.1.1",
     "webpack": "^5.81.0",
     "webpack-cli": "^5.0.2"
   }

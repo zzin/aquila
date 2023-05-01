@@ -46,14 +46,11 @@ const rules = [
     ],
   },
   {
-    test: /\.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+    test: /\.(eot|otf|ttf|woff|woff2)$/i,
     exclude: [IMG_DIR, /node_modules/],
-    use: {
-      loader: 'file-loader',
-      options: {
-        name: '[path][name].[ext]',
-        publicPath: 'production' === process.env.NODE_ENV ? '../' : '../../',
-      },
+    type: 'asset/resource',
+    generator: {
+      filename: 'library/fonts/[name][ext]',
     },
   },
 ];
