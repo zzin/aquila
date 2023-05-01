@@ -86,4 +86,7 @@ module.exports = (env, argv) => ({
   externals: {
     jquery: 'jQuery',
   },
+  stats: {
+    errorDetails: true,
+  },
 });
