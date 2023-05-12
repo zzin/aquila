@@ -14,7 +14,7 @@ get_header();
           <?php
           if (have_posts()) :
             ?>
-          <div class="container">
+          <div class="post-wrap">
             <?php
               if ( is_home() && ! is_front_page() ) {
                 ?>

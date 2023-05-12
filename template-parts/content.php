@@ -2,7 +2,7 @@
 /**
  * Content template
  *
- * @package aquila
+ * @package Aquila
  */
 ?>
 <article id="post-<?php the_ID();?>" <?php post_class( 'mb-5' ) ?>>

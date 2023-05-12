@@ -1,6 +1,40 @@
 /******/ (function() { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/js/carousel/index.js":
+/*!**********************************!*\
+  !*** ./src/js/carousel/index.js ***!
+  \**********************************/
+/***/ (function() {
+
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+(function ($) {
+  var SlickCarousel = /*#__PURE__*/function () {
+    function SlickCarousel() {
+      _classCallCheck(this, SlickCarousel);
+      this.initiateCarousel();
+    }
+    _createClass(SlickCarousel, [{
+      key: "initiateCarousel",
+      value: function initiateCarousel() {
+        $('.posts-carousel').slick({
+          autoplay: true,
+          autoplaySpeed: 1000
+        });
+      }
+    }]);
+    return SlickCarousel;
+  }();
+  new SlickCarousel();
+})(jQuery);
+
+/***/ }),
+
 /***/ "./src/js/clock/index.js":
 /*!*******************************!*\
   !*** ./src/js/clock/index.js ***!
@@ -23,7 +57,7 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
       key: "initializeClock",
       value: function initializeClock() {
         var _this = this;
-        var t = setInterval(function () {
+        setInterval(function () {
           return _this.time();
         }, 1000);
       }
@@ -31,7 +65,9 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
       key: "numPad",
       value: function numPad(str) {
         var cStr = str.toString();
-        if (cStr.length < 2) str = 0 + cStr;
+        if (2 > cStr.length) {
+          str = 0 + cStr;
+        }
         return str;
       }
     }, {
@@ -41,12 +77,14 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
         var currSec = currDate.getSeconds();
         var currMin = currDate.getMinutes();
         var curr24Hr = currDate.getHours();
-        var ampm = curr24Hr >= 12 ? 'pm' : 'am';
+        var ampm = 12 <= curr24Hr ? 'pm' : 'am';
         var currHr = curr24Hr % 12;
         currHr = currHr ? currHr : 12;
-        var stringTime = currHr + ':' + this.numPad(currMin) + ':' + this.numPad(currSec);
+        var stringTime =
+        // eslint-disable-next-line prettier/prettier
+        currHr + ':' + this.numPad(currMin) + ':' + this.numPad(currSec);
         var timeEmojiEl = $('#time-emoji');
-        if (curr24Hr >= 5 && curr24Hr <= 17) {
+        if (5 <= curr24Hr && 17 >= curr24Hr) {
           timeEmojiEl.text('🌞');
         } else {
           timeEmojiEl.text('🌜');
@@ -71,6 +109,18 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ("../../src/img/cat.jpg");
+
+/***/ }),
+
+/***/ "./src/img/patterns/cover.jpg":
+/*!************************************!*\
+  !*** ./src/img/patterns/cover.jpg ***!
+  \************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("../../src/img/patterns/cover.jpg");
 
 /***/ }),
 
@@ -165,14 +215,19 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _clock__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./clock */ "./src/js/clock/index.js");
 /* harmony import */ var _clock__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_clock__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _sass_main_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../sass/main.scss */ "./src/sass/main.scss");
-/* harmony import */ var _img_cat_jpg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../img/cat.jpg */ "./src/img/cat.jpg");
+/* harmony import */ var _carousel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./carousel */ "./src/js/carousel/index.js");
+/* harmony import */ var _carousel__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_carousel__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _sass_main_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../sass/main.scss */ "./src/sass/main.scss");
+/* harmony import */ var _img_cat_jpg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../img/cat.jpg */ "./src/img/cat.jpg");
+/* harmony import */ var _img_patterns_cover_jpg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../img/patterns/cover.jpg */ "./src/img/patterns/cover.jpg");
+
 
 
 // Styles
 
 
 // Images.
+
 
 }();
 /******/ })()
